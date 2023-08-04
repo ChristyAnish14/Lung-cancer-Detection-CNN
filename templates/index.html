@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Brain Tumor Detection</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Upload an image</h1>
+          <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <input type="file" class="form-control-file" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+          </form>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-12">
+          <h1>About the Project</h1>
+          <p>This project uses a Convolutional Neural Network (CNN) to detect brain tumors from CT scan images.</p>
+          
+          <div class="row">         
+          <div class="col-md-6">
+          <img src="static\accuracy_plot.png" alt="Accuracy Plot">
+          </div>
+          <div class="col-md-6">
+          <img src="static\accuracy_plot.png" alt="Loss Plot">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
