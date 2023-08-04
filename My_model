@@ -19,9 +19,9 @@ from keras.utils import to_categorical
 import matplotlib.pyplot as plt
 from keras.callbacks import History
 
-image_directory = '/content/Lungcancer Detection/CT-Scan Images'
-tumour_images = os.listdir('/content/Lungcancer Detection/CT-Scan Images/Cancerous raw images-jpg')
-no_tumour_images = os.listdir('/content/Lungcancer Detection/CT-Scan Images/Non-Cancerous raw images - jpg')
+image_directory = '/content/Lungcancer Detection/CT-Scan Images' #choose the correct path for the directory
+tumour_images = os.listdir('/content/Lungcancer Detection/CT-Scan Images/Cancerous raw images-jpg') #choose the correct path for the directory
+no_tumour_images = os.listdir('/content/Lungcancer Detection/CT-Scan Images/Non-Cancerous raw images - jpg') #choose the correct path for the directory
 dataset=[]
 label=[]
 INPUT_SIZE = 64
@@ -33,7 +33,7 @@ print(no_tumour_images)
 
 for i, image_name in enumerate(tumour_images):
    if(image_name.split('.')[1]=='jpg'):
-       image=cv2.imread('/content/Lungcancer Detection/CT-Scan Images/Cancerous raw images-jpg/'
+       image=cv2.imread('/content/Lungcancer Detection/CT-Scan Images/Cancerous raw images-jpg/' #choose the correct path for the directory
        +image_name)
        image=Image.fromarray(image, 'RGB')#converting the image to an array
        image=image.resize((INPUT_SIZE,INPUT_SIZE)) # Resizing the image
@@ -42,7 +42,7 @@ for i, image_name in enumerate(tumour_images):
 
 for i, image_name in enumerate(no_tumour_images):
    if(image_name.split('.')[1]=='jpg'):
-       image=cv2.imread('/content/Lungcancer Detection/CT-Scan Images/Non-Cancerous raw images - jpg/'
+       image=cv2.imread('/content/Lungcancer Detection/CT-Scan Images/Non-Cancerous raw images - jpg/' #choose the correct path for the directory
                         +image_name)
        image=Image.fromarray(image,'RGB') #converting the image to an array
        image=image.resize((INPUT_SIZE,INPUT_SIZE)) # Resizing the image
@@ -126,9 +126,9 @@ model.save('/content/Lungcancer Detection/My_model')
 
 from keras.models import load_model
 
-model = load_model('/content/Lungcancer Detection/My_model')
+model = load_model('/content/Lungcancer Detection/My_model') #Save your model in a location 
 
-images = cv2.imread('/content/Lungcancer Detection/Prediction/pred57.jpg')
+images = cv2.imread('/content/Lungcancer Detection/Prediction/pred57.jpg') #choose the correct path 
 img = Image.fromarray(images)
 img = img.resize((64,64))
 img = np.array(img)
@@ -159,9 +159,9 @@ from tensorflow.keras.preprocessing.image import load_img
 import numpy as np
 from io import BytesIO
 
-app = Flask(__name__,template_folder='/content/Lungcancer Detection/templates')
+   app = Flask(__name__,template_folder='/content/Lungcancer Detection/templates') #choose the correct path for templates
 run_with_ngrok(app)  # Start ngrok when the app is run
-model = load_model('/content/Lungcancer Detection/My_model')
+model = load_model('/content/Lungcancer Detection/My_model') #Choose the path of your saved model
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
