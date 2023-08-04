@@ -8,12 +8,21 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Brain Tumor Detection</title>
+    <title>A Web-Based Solution for Early Lung Cancer Detection</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Result</h1>
-      <p>Cancerous probability: {{ prediction }}</p>
+<div class="container">
+      <!-- <h1>Result</h1> -->
+      <h1>Lung cancer Prediction Result</h1>
+    <p>Cancerous probability: 
+    {% if prediction > 0.5 %}
+        High chances for cancer
+        <p>Cancerous probability: {{ prediction }}</p>
+    {% else %}
+        Low chances for cancer
+        <p>Cancerous probability: {{ prediction }}</p>
+    {% endif %}
+    </p>
       <a href="/" class="btn btn-primary">Try Again</a>
     </div>
 
